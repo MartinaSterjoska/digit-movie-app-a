@@ -1,0 +1,10 @@
+<div class="card" [class.hover]="isHovered === true" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="card-body">
+    <h5 class="card-title">{{ movieObject.title | uppercase }}</h5>
+    <p class="card-text">Director: {{ movieObject.director }}</p>
+    <p class="card-text">Has won award: {{ hasWonAward }}</p>
+    <p class="card-text">Release date:
+      {{ movieObject.releaseDate | date : 'fullDate' | defaultValue : '-' }}</p>
+    <button class="btn btn-danger" (click)="onClickDeleteButton()">Delete</button>
+  </div>
+</div>

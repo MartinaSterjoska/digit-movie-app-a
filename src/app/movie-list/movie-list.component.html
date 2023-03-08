@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>{{ moviesTitle }} </h1>
+  <hr>
+  <input type="text" class="form-control mb-3" placeholder="Search movies..."
+  [(ngModel)]="searchTerm">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let movie of getFilteredMovies">
+      <app-movie-details [movieObject]="movie" [hasWonAward]="movie.award" (deleteMovie)="deleteMovie($event)"></app-movie-details>
+    </div>
+  </div>
+</div>
